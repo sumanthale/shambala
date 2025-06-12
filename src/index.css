@@ -9,7 +9,7 @@
   
   body {
     font-family: 'Inter', system-ui, sans-serif;
-    background-color: #0a0118;
+    background: radial-gradient(ellipse at center, #1a0b2e 0%, #0a0118 70%);
     overflow-x: hidden;
   }
 }
@@ -25,6 +25,10 @@
   
   .border-glow {
     box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  }
+
+  .bg-gradient-radial {
+    background-image: radial-gradient(var(--tw-gradient-stops));
   }
 }
 
@@ -53,4 +57,19 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Cosmic glow effects */
+.cosmic-glow {
+  filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.5));
+}
+
+.neon-glow {
+  filter: drop-shadow(0 0 5px currentColor);
+}
+
+/* Enhanced backdrop blur for cosmic elements */
+.cosmic-blur {
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
 }

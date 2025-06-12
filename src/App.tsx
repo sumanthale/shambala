@@ -11,6 +11,9 @@ import CustomCursor from './components/CustomCursor';
 import Navigation from './components/Navigation';
 import AudioControls from './components/AudioControls';
 import SacredGeometry from './components/SacredGeometry';
+import CosmicBackground from './components/CosmicBackground';
+import SacredOverlay from './components/SacredOverlay';
+import ScrollReactiveBackground from './components/ScrollReactiveBackground';
 
 const realms = [
   'arrival',
@@ -48,7 +51,8 @@ function App() {
   if (isLoading) {
     return (
       <div className="fixed inset-0 bg-cosmic-950 flex items-center justify-center z-50">
-        <div className="text-center">
+        <CosmicBackground />
+        <div className="text-center relative z-10">
           <div className="w-32 h-32 mb-8 relative mx-auto">
             <SacredGeometry type="mandala" className="w-full h-full animate-sacred-spin text-neon-cyan" />
           </div>
@@ -74,11 +78,17 @@ function App() {
 
   return (
     <div className="relative">
+      {/* Cosmic Background Layers */}
+      <CosmicBackground />
+      <SacredOverlay />
+      <ScrollReactiveBackground />
+      
+      {/* UI Components */}
       <CustomCursor />
       <Navigation currentRealm={currentRealm} realms={realms} />
       <AudioControls isEnabled={isAudioEnabled} onToggle={setIsAudioEnabled} />
       
-      <main>
+      <main className="relative z-10">
         <ArrivalGateway />
         <TentRealm />
         <TravelRealm />

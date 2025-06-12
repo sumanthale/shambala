@@ -78,6 +78,7 @@ export default {
           "linear-gradient(135deg, #0A0A23 0%, #1A1A3A 25%, #3A1A5C 50%, #4C2A85 75%, #6B46C1 100%)",
         "chakra-gradient":
           "linear-gradient(135deg, #C53030 0%, #DD6B20 14%, #D69E2E 28%, #38A169 42%, #3182CE 57%, #805AD5 71%, #9F7AEA 85%, #06B6D4 100%)",
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         starfield:
           "radial-gradient(2px 2px at 20px 30px, #00FFFF, transparent), radial-gradient(2px 2px at 40px 70px, #9F7AEA, transparent), radial-gradient(1px 1px at 90px 40px, #F59E0B, transparent), radial-gradient(1px 1px at 130px 80px, #06B6D4, transparent), radial-gradient(2px 2px at 160px 30px, #00FFFF, transparent)",
       },
