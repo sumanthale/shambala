@@ -31,11 +31,11 @@ const TrekRealm: React.FC = () => {
   return (
     <section 
       ref={ref}
-      className="min-h-screen relative overflow-hidden bg-gradient-to-b from-cosmic-800 via-gray-900 to-cosmic-950"
+      className="min-h-screen relative overflow-hidden "
     >
       {/* Mountain Backdrop */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[conic-gradient(from_0deg_at_50%_100%,rgba(71,85,105,0.1),rgba(15,23,42,0.3),rgba(71,85,105,0.1))]" />
+        {/* <div className="absolute inset-0 bg-[conic-gradient(from_0deg_at_50%_100%,rgba(71,85,105,0.1),rgba(15,23,42,0.3),rgba(71,85,105,0.1))]" /> */}
         
         {/* Snow Particles */}
         {[...Array(30)].map((_, i) => (

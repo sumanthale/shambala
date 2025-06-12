@@ -17,7 +17,8 @@ const TravelRealm: React.FC = () => {
   return (
     <section 
       ref={ref}
-      className="min-h-screen relative overflow-hidden bg-gradient-to-b from-cosmic-800 via-slate-900 to-cosmic-900"
+      // className="min-h-screen relative overflow-hidden bg-gradient-to-b from-cosmic-800 via-slate-900 to-cosmic-900"
+      className="min-h-screen relative overflow-hidden "
     >
       {/* Mountain Silhouettes */}
       <div className="absolute inset-0">

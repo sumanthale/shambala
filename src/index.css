@@ -20,7 +20,7 @@
   }
   
   .text-glow {
-    text-shadow: 0 0 10px currentColor;
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
   }
   
   .border-glow {
@@ -29,6 +29,42 @@
 
   .bg-gradient-radial {
     background-image: radial-gradient(var(--tw-gradient-stops));
+  }
+
+  .bg-gradient-conic {
+    background-image: conic-gradient(var(--tw-gradient-stops));
+  }
+
+  .text-cosmic-glow {
+    background: linear-gradient(45deg, #00ffd5, #8b5cf6, #fbbf24);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: aurora 4s ease-in-out infinite;
+  }
+
+  .glass-morphism {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .cosmic-border {
+    position: relative;
+    border: 1px solid transparent;
+    background: linear-gradient(45deg, rgba(139, 92, 246, 0.1), rgba(6, 182, 212, 0.1)) padding-box,
+                linear-gradient(45deg, #8b5cf6, #06b6d4, #10b981, #f59e0b) border-box;
+  }
+
+  .aurora-text {
+    background: linear-gradient(45deg, #00ffd5, #8b5cf6, #fbbf24, #f472b6);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: aurora 6s ease-in-out infinite;
   }
 }
 
@@ -50,6 +86,36 @@
   background: linear-gradient(to bottom, #2563eb, #7c3aed);
 }
 
+/* Cosmic glow effects */
+.cosmic-glow {
+  filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.5)) drop-shadow(0 0 20px rgba(6, 182, 212, 0.3));
+}
+
+.neon-glow {
+  filter: drop-shadow(0 0 5px currentColor) drop-shadow(0 0 10px currentColor);
+}
+
+/* Enhanced backdrop blur for cosmic elements */
+.cosmic-blur {
+  backdrop-filter: blur(20px) saturate(180%) brightness(120%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(120%);
+}
+
+/* Particle effects */
+.particle-field {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: drift 12s ease-in-out infinite;
+}
+
 /* Smooth scroll for better performance */
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -59,17 +125,12 @@
   }
 }
 
-/* Cosmic glow effects */
-.cosmic-glow {
-  filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.5));
+/* Loading screen enhancements */
+.loading-mandala {
+  filter: drop-shadow(0 0 20px rgba(0, 255, 213, 0.6)) drop-shadow(0 0 40px rgba(139, 92, 246, 0.4));
 }
 
-.neon-glow {
-  filter: drop-shadow(0 0 5px currentColor);
-}
-
-/* Enhanced backdrop blur for cosmic elements */
-.cosmic-blur {
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
+/* Section transitions */
+.section-transition {
+  background: linear-gradient(180deg, transparent 0%, rgba(139, 92, 246, 0.05) 50%, transparent 100%);
 }

@@ -31,12 +31,13 @@ const TentRealm: React.FC = () => {
   return (
     <section 
       ref={ref}
-      className="min-h-screen relative overflow-hidden bg-gradient-to-b from-cosmic-900 via-emerald-950 to-cosmic-800"
+      // className="min-h-screen relative overflow-hidden bg-gradient-to-b from-cosmic-900 via-emerald-950 to-cosmic-800"
+      className="min-h-screen relative overflow-hidden"
     >
       {/* Mystical Forest Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(16,185,129,0.1),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(139,92,246,0.1),transparent_50%)]" />
+        {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(16,185,129,0.1),transparent_50%)]" /> */}
+        {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(139,92,246,0.1),transparent_50%)]" /> */}
         
         {/* Floating Orbs */}
         {[...Array(20)].map((_, i) => (

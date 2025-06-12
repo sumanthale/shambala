@@ -31,7 +31,8 @@ const RaveRealm: React.FC = () => {
   return (
     <section 
       ref={ref}
-      className="min-h-screen relative overflow-hidden bg-gradient-to-b from-cosmic-900 via-purple-950 to-cosmic-950"
+      className="min-h-screen relative overflow-hidden "
+      // className="min-h-screen relative overflow-hidden bg-gradient-to-b from-cosmic-900 via-purple-950 to-cosmic-950"
     >
       {/* Pulsing Background */}
       <div className="absolute inset-0">
@@ -201,7 +202,7 @@ const RaveRealm: React.FC = () => {
 
           {/* Sound Visualizer */}
           <motion.div
-            className="flex justify-center space-x-1 md:space-x-2"
+            className="flex justify-center space-x-1 md:space-x-2 h-10"
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 1, delay: 1 }}
