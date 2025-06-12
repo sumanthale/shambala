@@ -19,39 +19,31 @@ const Navigation: React.FC<NavigationProps> = ({ currentRealm, realms }) => {
   };
 
   return (
-    <nav className="fixed right-6 md:right-8 top-1/2 transform -translate-y-1/2 z-40">
-      <div className="flex flex-col space-y-4 md:space-y-6">
+    <nav className="fixed right-4 md:right-8 top-1/2 transform -translate-y-1/2 z-40">
+      <div className="flex flex-col space-y-3 md:space-y-4">
         {realms.map((realm, index) => {
           const Icon = navIcons[index];
           const isActive = currentRealm === index;
           
           return (
-            <motion.button
+            <button
               key={realm}
               onClick={() => scrollToRealm(index)}
               className="cursor-hover relative group"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
             >
               <motion.div
-                className={`w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center transition-all duration-500 glass-morphism ${
+                className={`w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
                   isActive 
-                    ? 'cosmic-border shadow-cosmic' 
-                    : 'border border-white/10 hover:border-white/30'
+                    ? 'bg-neon-cyan/20 backdrop-blur-lg border border-neon-cyan' 
+                    : 'bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10'
                 }`}
-                animate={isActive ? {
-                  boxShadow: [
-                    '0 0 20px rgba(139, 92, 246, 0.3)',
-                    '0 0 40px rgba(139, 92, 246, 0.6)',
-                    '0 0 20px rgba(139, 92, 246, 0.3)'
-                  ]
-                } : {}}
-                transition={{ duration: 2, repeat: Infinity }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <Icon 
-                  size={18} 
-                  className={`md:w-6 md:h-6 transition-all duration-300 ${
-                    isActive ? 'text-neon-cyan neon-glow' : 'text-white/70 group-hover:text-white'
+                  size={16} 
+                  className={`md:w-5 md:h-5 transition-colors duration-300 ${
+                    isActive ? 'text-neon-cyan' : 'text-white/70 group-hover:text-white'
                   }`} 
                 />
                 
@@ -64,52 +56,21 @@ const Navigation: React.FC<NavigationProps> = ({ currentRealm, realms }) => {
                   >
                     <SacredGeometry 
                       type="circle" 
-                      className="w-full h-full text-neon-cyan animate-spin-slow opacity-40" 
+                      className="w-full h-full text-neon-cyan animate-spin-slow opacity-30" 
                     />
                   </motion.div>
                 )}
-                
-                {/* Pulse effect for active state */}
-                {isActive && (
-                  <motion.div
-                    className="absolute inset-0 rounded-full border-2 border-neon-cyan"
-                    animate={{ scale: [1, 1.5], opacity: [0.5, 0] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  />
-                )}
               </motion.div>
               
-              {/* Enhanced tooltip */}
-              <motion.div 
-                className="absolute right-full mr-4 md:mr-6 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none"
-                initial={{ x: 10, opacity: 0 }}
-                whileHover={{ x: 0, opacity: 1 }}
-              >
-                <div className="glass-morphism cosmic-border px-4 py-2 rounded-lg whitespace-nowrap">
-                  <span className="text-white text-sm md:text-base capitalize font-cosmic aurora-text">
-                    {realm}
-                  </span>
-                  <div className="absolute right-0 top-1/2 transform translate-x-1 -translate-y-1/2 w-2 h-2 bg-cosmic-900 rotate-45 border-r border-b border-white/10" />
+              <div className="absolute right-full mr-2 md:mr-3 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                <div className="bg-cosmic-900/90 backdrop-blur-lg px-2 md:px-3 py-1 rounded-lg border border-white/10 whitespace-nowrap">
+                  <span className="text-white text-xs md:text-sm capitalize font-cosmic">{realm}</span>
                 </div>
-              </motion.div>
-            </motion.button>
+              </div>
+            </button>
           );
         })}
       </div>
-      
-      {/* Progress indicator */}
-      <motion.div
-        className="absolute -left-6 top-0 w-1 bg-white/10 rounded-full"
-        style={{ height: `${(realms.length - 1) * (48 + 24)}px` }}
-      >
-        <motion.div
-          className="w-full bg-gradient-to-b from-neon-cyan to-neon-purple rounded-full"
-          animate={{ 
-            height: `${(currentRealm / (realms.length - 1)) * 100}%` 
-          }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
-        />
-      </motion.div>
     </nav>
   );
 };
