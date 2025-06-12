@@ -162,7 +162,43 @@ const CosmicBackground: React.FC = () => {
 
   return (
     <>
-           <iframe src='https://my.spline.design/particlenebula-mEK1Kow54HSR6iE9krzuy8gz/' frameborder='0' width='100%' height='100%'></iframe>
+      <canvas
+        ref={canvasRef}
+        className="fixed inset-0 z-0 pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse at center, #1a0b2e 0%, #0a0118 70%)' }}
+      />
+      {/* Additional cosmic layers */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        {/* Distant galaxies */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-gradient-radial from-purple-500/30 to-transparent rounded-full blur-xl animate-pulse" />
+          <div className="absolute top-3/4 right-1/4 w-24 h-24 bg-gradient-radial from-cyan-500/30 to-transparent rounded-full blur-lg animate-pulse" style={{ animationDelay: '1s' }} />
+          <div className="absolute top-1/2 right-1/3 w-20 h-20 bg-gradient-radial from-amber-500/30 to-transparent rounded-full blur-lg animate-pulse" style={{ animationDelay: '2s' }} />
+        </div>
+        
+        {/* Cosmic dust */}
+        <div className="absolute inset-0 opacity-10">
+          {[...Array(20)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1 bg-white rounded-full"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+              }}
+              animate={{
+                opacity: [0, 1, 0],
+                scale: [0, 1, 0],
+              }}
+              transition={{
+                duration: Math.random() * 4 + 2,
+                repeat: Infinity,
+                delay: Math.random() * 3,
+              }}
+            />
+          ))}
+        </div>
+      </div>
     </>
   );
 };
