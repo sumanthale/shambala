@@ -167,7 +167,6 @@ const CosmicBackground: React.FC = () => {
         className="fixed inset-0 z-0 pointer-events-none"
         style={{ background: 'radial-gradient(ellipse at center, #1a0b2e 0%, #0a0118 70%)' }}
       />
-      <iframe src='https://my.spline.design/particlenebula-mEK1Kow54HSR6iE9krzuy8gz/' frameborder='0' width='100%' height='100%'></iframe>
       {/* Additional cosmic layers */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         {/* Distant galaxies */}
