@@ -43,8 +43,29 @@ function App() {
     const handleScroll = throttle(() => {
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
-      const newRealm = Math.floor(scrollPosition / windowHeight);
-      setCurrentRealm(Math.min(newRealm, realms.length - 1));
+      
+      // Find which section is currently in view
+      let newRealm = 0;
+      for (let i = 0; i < realms.length; i++) {
+        const element = document.getElementById(`realm-${i}`);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          const elementTop = rect.top + scrollPosition;
+          const elementBottom = elementTop + rect.height;
+          
+          // Check if the section is in the viewport (with some tolerance)
+          if (scrollPosition >= elementTop - windowHeight * 0.3 && 
+              scrollPosition < elementBottom - windowHeight * 0.3) {
+            newRealm = i;
+            break;
+          }
+        } else {
+          // Fallback to viewport height calculation
+          newRealm = Math.min(Math.floor(scrollPosition / windowHeight), realms.length - 1);
+        }
+      }
+      
+      setCurrentRealm(newRealm);
     }, 100);
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -129,9 +150,9 @@ function App() {
         <CosmicBackground />
         {/* shapes */}
         <SacredOverlay />
-        {/* Lnes */}
+        {/* Lines */}
         <ScrollReactiveBackground />
-        {/* color particels */}
+        {/* color particles */}
         <ParticleField /> 
 
         
@@ -141,13 +162,27 @@ function App() {
         {/* <AudioControls isEnabled={isAudioEnabled} onToggle={setIsAudioEnabled} /> */}
         
         <main className="relative z-10">
-          <ArrivalGateway />
-          <TentRealm />
-          <TravelRealm />
-          <RaveRealm />
-          <TrekRealm />
-          <VastramRealm />
-          <CafeRealm />
+          <div id="realm-0">
+            <ArrivalGateway />
+          </div>
+          <div id="realm-1">
+            <TentRealm />
+          </div>
+          <div id="realm-2">
+            <TravelRealm />
+          </div>
+          <div id="realm-3">
+            <RaveRealm />
+          </div>
+          <div id="realm-4">
+            <TrekRealm />
+          </div>
+          <div id="realm-5">
+            <VastramRealm />
+          </div>
+          <div id="realm-6">
+            <CafeRealm />
+          </div>
         </main>
       </div>
     </>

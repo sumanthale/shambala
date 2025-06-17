@@ -129,6 +129,10 @@
   .tap-target {
     @apply min-h-[44px] min-w-[44px] flex items-center justify-center;
   }
+
+  .neon-glow {
+    filter: drop-shadow(0 0 8px currentColor) drop-shadow(0 0 16px currentColor);
+  }
 }
 
 /* Custom scrollbar */
@@ -169,13 +173,52 @@
   }
 }
 
-/* Focus styles for accessibility */
-.loading-mandala {
-  filter: drop-shadow(0 0 20px rgba(0, 255, 213, 0.6)) drop-shadow(0 0 40px rgba(139, 92, 246, 0.4));
+
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .section-container {
+    @apply px-4;
+  }
+  
+  .section-padding {
+    @apply py-12;
+  }
+  
+  .card-base {
+    @apply rounded-xl;
+  }
+  
+  .text-heading-xl {
+    @apply text-3xl;
+  }
+  
+  .text-heading-lg {
+    @apply text-xl;
+  }
+  
+  .spacing-section {
+    @apply space-y-8;
+  }
+  
+  .spacing-content {
+    @apply space-y-4;
+  }
+  
+  .spacing-items {
+    @apply space-y-3;
+  }
 }
 
-button:focus,
-a:focus {
-  outline: 2px solid #00ffd5;
-  outline-offset: 2px;
+/* Ensure sections have proper minimum height */
+section {
+  min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport height for mobile */
+}
+
+/* Better mobile touch targets */
+@media (max-width: 640px) {
+  .tap-target {
+    @apply min-h-[48px] min-w-[48px];
+  }
 }
