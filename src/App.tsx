@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion} from 'framer-motion';
 import ArrivalGateway from './components/ArrivalGateway';
 import TentRealm from './components/TentRealm';
 import TravelRealm from './components/TravelRealm';
@@ -7,15 +7,16 @@ import RaveRealm from './components/RaveRealm';
 import TrekRealm from './components/TrekRealm';
 import VastramRealm from './components/VastramRealm';
 import CafeRealm from './components/CafeRealm';
-import CustomCursor from './components/CustomCursor';
+// import CustomCursor from './components/CustomCursor';
 import Navigation from './components/Navigation';
-import AudioControls from './components/AudioControls';
+// import AudioControls from './components/AudioControls';
 import SacredGeometry from './components/SacredGeometry';
 import CosmicBackground from './components/CosmicBackground';
 import SacredOverlay from './components/SacredOverlay';
 import ScrollReactiveBackground from './components/ScrollReactiveBackground';
-import SmoothScroll from './components/SmoothScroll';
+// import SmoothScroll from './components/SmoothScroll';
 import ParticleField from './components/ParticleField';
+import { throttle } from './helpers/helpers';
 
 const realms = [
   'arrival',
@@ -29,7 +30,7 @@ const realms = [
 
 function App() {
   const [currentRealm, setCurrentRealm] = useState(0);
-  const [isAudioEnabled, setIsAudioEnabled] = useState(false);
+  // const [isAudioEnabled, setIsAudioEnabled] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -39,12 +40,12 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = throttle(() => {
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
       const newRealm = Math.floor(scrollPosition / windowHeight);
       setCurrentRealm(Math.min(newRealm, realms.length - 1));
-    };
+    }, 100);
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -135,7 +136,7 @@ function App() {
 
         
         {/* UI Components */}
-        <CustomCursor />
+        {/* <CustomCursor /> */}
         <Navigation currentRealm={currentRealm} realms={realms} />
         {/* <AudioControls isEnabled={isAudioEnabled} onToggle={setIsAudioEnabled} /> */}
         

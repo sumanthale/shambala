@@ -86,8 +86,9 @@ const ArrivalGateway: React.FC = () => {
             The Higher Dimension
           </p>
           <p className="text-base md:text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
-            Awaken to cosmic luxury. Transcend reality through sacred travel
-            experiences that bridge ancient wisdom with infinite possibility.
+            {/* Awaken to cosmic luxury. Transcend reality through sacred travel
+            experiences that bridge ancient wisdom with infinite possibility. */}
+            Step into a higher dimension where every moment is an awakening — a living journey through sacred adventures, luminous memories, and boundless wonder.
           </p>
         </motion.div>
 

@@ -175,7 +175,7 @@ const CosmicBackground: React.FC = () => {
           <div className="absolute top-3/4 right-1/4 w-24 h-24 bg-gradient-radial from-cyan-500/30 to-transparent rounded-full blur-lg animate-pulse" style={{ animationDelay: '1s' }} />
           <div className="absolute top-1/2 right-1/3 w-20 h-20 bg-gradient-radial from-amber-500/30 to-transparent rounded-full blur-lg animate-pulse" style={{ animationDelay: '2s' }} />
         </div>
-        
+        {/* <iframe src='https://my.spline.design/particlenebula-mEK1Kow54HSR6iE9krzuy8gz/' frameborder='0' width='100%' height='100%'></iframe> */}
         {/* Cosmic dust */}
         <div className="absolute inset-0 opacity-10">
           {[...Array(20)].map((_, i) => (
