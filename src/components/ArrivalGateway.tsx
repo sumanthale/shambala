@@ -90,6 +90,7 @@ const ArrivalGateway: React.FC = () => {
             experiences that bridge ancient wisdom with infinite possibility. */}
             Step into a higher dimension where every moment is an awakening — a living journey through sacred adventures, luminous memories, and boundless wonder.
           </p>
+          </div>
         </motion.div>
 
         <motion.button
