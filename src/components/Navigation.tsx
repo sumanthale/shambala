@@ -19,8 +19,8 @@ const Navigation: React.FC<NavigationProps> = ({ currentRealm, realms }) => {
   };
 
   return (
-    <nav className="fixed -bottom-20 right-6 md:right-8 top-1/2 transform -translate-y-1/2 z-40">
-      <div className="flex flex-col space-y-4 md:space-y-6">
+    <nav className="fixed right-4 sm:right-6 lg:right-8 top-1/2 transform -translate-y-1/2 z-40">
+      <div className="flex flex-col space-y-3 sm:space-y-4">
         {realms.map((realm, index) => {
           const Icon = navIcons[index];
           const isActive = currentRealm === index;
@@ -29,12 +29,13 @@ const Navigation: React.FC<NavigationProps> = ({ currentRealm, realms }) => {
             <motion.button
               key={realm}
               onClick={() => scrollToRealm(index)}
-              className="cursor-hover relative group"
+              className="cursor-hover relative group tap-target"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
+              aria-label={`Navigate to ${realm} section`}
             >
               <motion.div
-                className={`w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-all duration-500 glass-morphism ${
+                className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center transition-all duration-500 glass-morphism ${
                   isActive 
                     ? 'cosmic-border shadow-cosmic' 
                     : 'border border-white/10 hover:border-white/30'
@@ -50,7 +51,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentRealm, realms }) => {
               >
                 <Icon 
                   size={16} 
-                  className={`md:w-5 md:h-5 transition-all duration-300 ${
+                  className={`sm:w-5 sm:h-5 transition-all duration-300 ${
                     isActive ? 'text-neon-cyan neon-glow' : 'text-white/70 group-hover:text-white'
                   }`} 
                 />
@@ -69,7 +70,6 @@ const Navigation: React.FC<NavigationProps> = ({ currentRealm, realms }) => {
                   </motion.div>
                 )}
                 
-                {/* Pulse effect for active state */}
                 {isActive && (
                   <motion.div
                     className="absolute inset-0 rounded-full border-2 border-neon-cyan"
@@ -81,12 +81,12 @@ const Navigation: React.FC<NavigationProps> = ({ currentRealm, realms }) => {
               
               {/* Enhanced tooltip */}
               <motion.div 
-                className="absolute right-full mr-4 md:mr-6 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none"
+                className="absolute right-full mr-3 sm:mr-4 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none"
                 initial={{ x: 10, opacity: 0 }}
                 whileHover={{ x: 0, opacity: 1 }}
               >
-                <div className="glass-morphism cosmic-border px-4 py-2 rounded-lg whitespace-nowrap">
-                  <span className="text-white text-sm md:text-base capitalize font-cosmic aurora-text">
+                <div className="glass-morphism cosmic-border px-3 py-2 rounded-lg whitespace-nowrap">
+                  <span className="text-white text-sm font-cosmic aurora-text capitalize">
                     {realm}
                   </span>
                   <div className="absolute right-0 top-1/2 transform translate-x-1 -translate-y-1/2 w-2 h-2 bg-cosmic-900 rotate-45 border-r border-b border-white/10" />
@@ -99,8 +99,8 @@ const Navigation: React.FC<NavigationProps> = ({ currentRealm, realms }) => {
       
       {/* Progress indicator */}
       <motion.div
-        className="absolute -left-6 top-0 w-1 bg-white/10 rounded-full"
-        style={{ height: `${(realms.length - 1) * (48 + 24)}px` }}
+        className="absolute -left-4 sm:-left-6 top-0 w-1 bg-white/10 rounded-full"
+        style={{ height: `${(realms.length - 1) * 52}px` }}
       >
         <motion.div
           className="w-full bg-gradient-to-b from-neon-cyan to-neon-purple rounded-full"

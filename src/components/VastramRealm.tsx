@@ -48,7 +48,7 @@ const VastramRealm: React.FC = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(99,102,241,0.1),transparent_60%)]" />
         
         {/* Floating Elements */}
-        {[...Array(15)].map((_, i) => (
+        {[...Array(12)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute"
@@ -67,50 +67,50 @@ const VastramRealm: React.FC = () => {
               delay: Math.random() * 3,
             }}
           >
-            <Sparkles className="w-3 h-3 md:w-4 md:h-4 text-indigo-400" />
+            <Sparkles className="w-3 h-3 lg:w-4 lg:h-4 text-indigo-400" />
           </motion.div>
         ))}
       </div>
 
-      <div className="relative z-10 min-h-screen flex items-center justify-center px-4 py-16">
-        <div className="max-w-7xl mx-auto w-full">
+      <div className="section-container section-padding relative z-10">
+        <div className="spacing-section">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1 }}
-            className="text-center mb-12 md:mb-16"
+            className="text-center spacing-content"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-cosmic font-thin text-white mb-4">
+            <h2 className="text-heading-xl text-white mb-6">
               Vastram Collection
             </h2>
-            <div className="flex items-center justify-center space-x-4 mb-6">
-              <Shirt className="w-5 h-5 md:w-6 md:h-6 text-indigo-400" />
+            <div className="flex items-center justify-center space-x-4 mb-8">
+              <Shirt className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-400" />
               <motion.div 
-                className="h-px bg-gradient-to-r from-transparent via-indigo-400 to-transparent w-24 md:w-32"
+                className="h-px bg-gradient-to-r from-transparent via-indigo-400 to-transparent w-16 sm:w-24 lg:w-32"
                 animate={{ scaleX: [1, 1.3, 1] }}
                 transition={{ duration: 3, repeat: Infinity }}
               />
-              <Star className="w-5 h-5 md:w-6 md:h-6 text-indigo-400" />
+              <Star className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-400" />
               <motion.div 
-                className="h-px bg-gradient-to-r from-transparent via-indigo-400 to-transparent w-24 md:w-32"
+                className="h-px bg-gradient-to-r from-transparent via-indigo-400 to-transparent w-16 sm:w-24 lg:w-32"
                 animate={{ scaleX: [1, 1.3, 1] }}
                 transition={{ duration: 3, repeat: Infinity, delay: 1.5 }}
               />
-              <ShoppingBag className="w-5 h-5 md:w-6 md:h-6 text-indigo-400" />
+              <ShoppingBag className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-400" />
             </div>
-            <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto">
+            <p className="text-body-lg text-white/70 max-w-3xl mx-auto">
               Wear your consciousness. Sacred apparel for elevated souls seeking to express their inner cosmos.
             </p>
           </motion.div>
 
           {/* Central Sacred Runway */}
           <motion.div
-            className="relative mb-12 md:mb-16 flex justify-center"
+            className="flex justify-center mb-12"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 1.5 }}
           >
-            <div className="relative w-64 h-16 md:w-80 md:h-20">
+            <div className="relative w-64 h-16 lg:w-80 lg:h-20">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent rounded-full backdrop-blur-sm border border-white/20" />
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 via-purple-500/20 to-pink-500/20 rounded-full"
@@ -128,7 +128,7 @@ const VastramRealm: React.FC = () => {
               />
               
               {/* Floating Sacred Geometry */}
-              <div className="absolute -top-6 md:-top-8 left-1/2 transform -translate-x-1/2 w-12 h-12 md:w-16 md:h-16">
+              <div className="absolute -top-6 lg:-top-8 left-1/2 transform -translate-x-1/2 w-12 h-12 lg:w-16 lg:h-16">
                 <SacredGeometry 
                   type="lotus" 
                   className="w-full h-full text-indigo-400 animate-sacred-spin opacity-60" 
@@ -138,7 +138,7 @@ const VastramRealm: React.FC = () => {
           </motion.div>
 
           {/* Collection Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8 md:mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mb-12">
             {collections.map((item, index) => (
               <motion.div
                 key={item.name}
@@ -147,10 +147,10 @@ const VastramRealm: React.FC = () => {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 className="cursor-hover group"
               >
-                <div className="relative p-4 md:p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 group-hover:bg-white/10 group-hover:border-indigo-400/30 transition-all duration-500 h-full">
+                <div className="card-base card-hover p-4 lg:p-6 h-full">
                   {/* Floating Item Representation */}
                   <motion.div
-                    className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 rounded-xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 border border-indigo-400/30 flex items-center justify-center"
+                    className="w-16 h-16 lg:w-20 lg:h-20 mx-auto mb-4 rounded-xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 border border-indigo-400/30 flex items-center justify-center"
                     animate={{
                       y: [0, -5, 0],
                       rotateY: [0, 5, 0, -5, 0],
@@ -161,41 +161,43 @@ const VastramRealm: React.FC = () => {
                       delay: index * 0.2,
                     }}
                   >
-                    <Shirt className="w-8 h-8 md:w-10 md:h-10 text-indigo-400 group-hover:text-neon-cyan transition-colors duration-500" />
+                    <Shirt className="w-8 h-8 lg:w-10 lg:h-10 text-indigo-400 group-hover:text-neon-cyan transition-colors duration-500" />
                   </motion.div>
 
-                  <div className="text-center mb-4">
-                    <h3 className="text-lg md:text-xl font-cosmic text-white mb-1">{item.name}</h3>
-                    <div className="text-indigo-400 text-xs md:text-sm mb-2">{item.category}</div>
-                    <div className="text-xl md:text-2xl font-bold text-neon-gold mb-3">{item.price}</div>
-                    <p className="text-white/60 text-xs md:text-sm mb-4">{item.description}</p>
-                  </div>
+                  <div className="text-center spacing-content">
+                    <div className="spacing-items">
+                      <h3 className="text-heading-md text-white">{item.name}</h3>
+                      <div className="text-indigo-400 text-body-md">{item.category}</div>
+                      <div className="text-xl lg:text-2xl font-bold text-neon-gold">{item.price}</div>
+                      <p className="text-white/60 text-body-md">{item.description}</p>
+                    </div>
 
-                  <div className="space-y-2 mb-6">
-                    {item.features.map((feature, featureIndex) => (
-                      <motion.div
-                        key={feature}
-                        className="flex items-center space-x-2 text-white/70"
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={inView ? { opacity: 1, x: 0 } : {}}
-                        transition={{ 
-                          duration: 0.5, 
-                          delay: (index * 0.1) + (featureIndex * 0.05) 
-                        }}
-                      >
-                        <Star className="w-2 h-2 md:w-3 md:h-3 text-indigo-400 flex-shrink-0" />
-                        <span className="text-xs">{feature}</span>
-                      </motion.div>
-                    ))}
-                  </div>
+                    <div className="spacing-items">
+                      {item.features.map((feature, featureIndex) => (
+                        <motion.div
+                          key={feature}
+                          className="flex items-center space-x-2 text-white/70"
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={inView ? { opacity: 1, x: 0 } : {}}
+                          transition={{ 
+                            duration: 0.5, 
+                            delay: (index * 0.1) + (featureIndex * 0.05) 
+                          }}
+                        >
+                          <Star className="w-3 h-3 text-indigo-400 flex-shrink-0" />
+                          <span className="text-xs">{feature}</span>
+                        </motion.div>
+                      ))}
+                    </div>
 
-                  <motion.button
-                    className="w-full py-2 md:py-3 rounded-lg bg-gradient-to-r from-indigo-600/20 to-purple-600/20 border border-indigo-400/30 text-indigo-400 font-cosmic tracking-wide text-xs md:text-sm group-hover:from-indigo-600/30 group-hover:to-purple-600/30 transition-all duration-500"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    Add to Consciousness
-                  </motion.button>
+                    <motion.button
+                      className="button-primary w-full text-xs lg:text-sm"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      Add to Consciousness
+                    </motion.button>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -209,7 +211,7 @@ const VastramRealm: React.FC = () => {
             transition={{ duration: 1, delay: 1 }}
           >
             <motion.button
-              className="px-8 md:px-12 py-3 md:py-4 rounded-full bg-gradient-to-r from-indigo-600/20 to-purple-600/20 border border-indigo-400/40 text-indigo-400 font-cosmic text-base md:text-lg tracking-wide backdrop-blur-lg"
+              className="button-primary text-base lg:text-lg"
               whileHover={{ 
                 scale: 1.05,
                 boxShadow: '0 0 30px rgba(99, 102, 241, 0.3)',
