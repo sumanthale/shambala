@@ -31,8 +31,7 @@ const RaveRealm: React.FC = () => {
   return (
     <section 
       ref={ref}
-      className="min-h-screen relative overflow-hidden "
-      // className="min-h-screen relative overflow-hidden bg-gradient-to-b from-cosmic-900 via-purple-950 to-cosmic-950"
+      className="min-h-screen relative overflow-hidden"
     >
       {/* Pulsing Background */}
       <div className="absolute inset-0">

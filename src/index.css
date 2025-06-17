@@ -149,34 +149,15 @@
   background: linear-gradient(to bottom, #2563eb, #7c3aed);
 }
 
-/* Cosmic glow effects */
-.cosmic-glow {
-  filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.5)) drop-shadow(0 0 20px rgba(6, 182, 212, 0.3));
-}
-
-.neon-glow {
-  filter: drop-shadow(0 0 5px currentColor) drop-shadow(0 0 10px currentColor);
-}
-
 /* Enhanced backdrop blur for cosmic elements */
 .cosmic-blur {
   backdrop-filter: blur(20px) saturate(180%) brightness(120%);
   -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(120%);
 }
 
-/* Particle effects */
-.particle-field {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.particle {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  animation: drift 12s ease-in-out infinite;
+/* Loading screen enhancements */
+.loading-mandala {
+  filter: drop-shadow(0 0 20px rgba(0, 255, 213, 0.6)) drop-shadow(0 0 40px rgba(139, 92, 246, 0.4));
 }
 
 /* Smooth scroll for better performance */
@@ -193,7 +174,8 @@
   filter: drop-shadow(0 0 20px rgba(0, 255, 213, 0.6)) drop-shadow(0 0 40px rgba(139, 92, 246, 0.4));
 }
 
-/* Section transitions */
-.section-transition {
-  background: linear-gradient(180deg, transparent 0%, rgba(139, 92, 246, 0.05) 50%, transparent 100%);
+button:focus,
+a:focus {
+  outline: 2px solid #00ffd5;
+  outline-offset: 2px;
 }
