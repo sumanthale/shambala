@@ -11,14 +11,73 @@
     font-family: 'Inter', system-ui, sans-serif;
     background: radial-gradient(ellipse at center, #1a0b2e 0%, #0a0118 70%);
     overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .card-base {
+    @apply rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 transition-all duration-500;
+  }
+
+  .card-hover {
+    @apply hover:bg-white/10 hover:border-white/20 hover:shadow-lg hover:shadow-white/5;
+  }
+
+  .button-primary {
+    @apply px-6 py-3 rounded-xl bg-gradient-to-r from-neon-cyan/20 to-neon-purple/20 border border-neon-cyan/30 text-neon-cyan font-cosmic tracking-wide transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-neon-cyan/20;
+  }
+
+  .button-secondary {
+    @apply px-4 py-2 rounded-lg bg-white/5 border border-white/20 text-white/80 font-medium transition-all duration-300 hover:bg-white/10 hover:border-white/30;
+  }
+
+  .text-heading-xl {
+    @apply text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-cosmic font-thin;
+  }
+
+  .text-heading-lg {
+    @apply text-2xl sm:text-3xl lg:text-4xl font-cosmic font-light;
+  }
+
+  .text-heading-md {
+    @apply text-xl sm:text-2xl font-cosmic font-medium;
+  }
+
+  .text-body-lg {
+    @apply text-base sm:text-lg lg:text-xl;
+  }
+
+  .text-body-md {
+    @apply text-sm sm:text-base;
+  }
+
+  .spacing-section {
+    @apply space-y-12 sm:space-y-16 lg:space-y-20;
+  }
+
+  .spacing-content {
+    @apply space-y-6 sm:space-y-8;
+  }
+
+  .spacing-items {
+    @apply space-y-4 sm:space-y-6;
   }
 }
 
 @layer utilities {
-  /* .cursor-hover {
-    cursor: none;
-  } */
-  
   .text-glow {
     text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
   }
@@ -65,6 +124,10 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: aurora 6s ease-in-out infinite;
+  }
+
+  .tap-target {
+    @apply min-h-[44px] min-w-[44px] flex items-center justify-center;
   }
 }
 
@@ -125,7 +188,7 @@
   }
 }
 
-/* Loading screen enhancements */
+/* Focus styles for accessibility */
 .loading-mandala {
   filter: drop-shadow(0 0 20px rgba(0, 255, 213, 0.6)) drop-shadow(0 0 40px rgba(139, 92, 246, 0.4));
 }

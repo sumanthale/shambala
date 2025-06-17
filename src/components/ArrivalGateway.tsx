@@ -12,7 +12,7 @@ const ArrivalGateway: React.FC = () => {
   };
 
   return (
-    <section className="min-h-screen relative overflow-hidden">
+    <section className="min-h-screen relative overflow-hidden flex items-center justify-center">
       {/* Animated Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(139,92,246,0.1),transparent_70%)]" />
@@ -83,14 +83,13 @@ const ArrivalGateway: React.FC = () => {
           
           <div className="h-px bg-gradient-to-r from-transparent via-neon-cyan to-transparent w-full max-w-2xl mx-auto mb-6" />
           <p className="text-xl md:text-2xl lg:text-3xl font-sacred text-neon-cyan/80 mb-2">
-            The Higher Dimension
-          </p>
+              The Higher Dimension
+            </p>
           <p className="text-base md:text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
             {/* Awaken to cosmic luxury. Transcend reality through sacred travel
             experiences that bridge ancient wisdom with infinite possibility. */}
-            Step into a higher dimension where every moment is an awakening — a living journey through sacred adventures, luminous memories, and boundless wonder.
-          </p>
-          </div>
+              Step into a higher dimension where every moment is an awakening — a living journey through sacred adventures, luminous memories, and boundless wonder.
+            </p>
         </motion.div>
 
         <motion.button

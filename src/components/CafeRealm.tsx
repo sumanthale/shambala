@@ -45,7 +45,7 @@ const CafeRealm: React.FC = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_30%,rgba(139,92,246,0.1),transparent_50%)]" />
         
         {/* Steam Effects */}
-        {[...Array(8)].map((_, i) => (
+        {[...Array(6)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute w-2 h-2 bg-amber-300 rounded-full opacity-20"
@@ -67,7 +67,7 @@ const CafeRealm: React.FC = () => {
         ))}
 
         {/* Floating Sacred Elements */}
-        {[...Array(12)].map((_, i) => (
+        {[...Array(8)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute opacity-10"
@@ -87,54 +87,54 @@ const CafeRealm: React.FC = () => {
           >
             <SacredGeometry 
               type={i % 2 === 0 ? 'lotus' : 'circle'} 
-              className="w-6 h-6 md:w-8 md:h-8 text-amber-400" 
+              className="w-6 h-6 lg:w-8 lg:h-8 text-amber-400" 
             />
           </motion.div>
         ))}
       </div>
 
-      <div className="relative z-10 min-h-screen flex items-center justify-center px-4 py-16">
-        <div className="max-w-6xl mx-auto w-full">
+      <div className="section-container section-padding relative z-10">
+        <div className="spacing-section">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1 }}
-            className="text-center mb-12 md:mb-16"
+            className="text-center spacing-content"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-cosmic font-thin text-white mb-4">
+            <h2 className="text-heading-xl text-white mb-6">
               Celestial Café
             </h2>
-            <div className="flex items-center justify-center space-x-4 mb-6">
-              <Coffee className="w-5 h-5 md:w-6 md:h-6 text-amber-400" />
+            <div className="flex items-center justify-center space-x-4 mb-8">
+              <Coffee className="w-5 h-5 sm:w-6 sm:h-6 text-amber-400" />
               <motion.div 
-                className="h-px bg-gradient-to-r from-transparent via-amber-400 to-transparent w-24 md:w-32"
+                className="h-px bg-gradient-to-r from-transparent via-amber-400 to-transparent w-16 sm:w-24 lg:w-32"
                 animate={{ scaleX: [1, 1.2, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
               />
-              <Heart className="w-5 h-5 md:w-6 md:h-6 text-amber-400" />
+              <Heart className="w-5 h-5 sm:w-6 sm:h-6 text-amber-400" />
               <motion.div 
-                className="h-px bg-gradient-to-r from-transparent via-amber-400 to-transparent w-24 md:w-32"
+                className="h-px bg-gradient-to-r from-transparent via-amber-400 to-transparent w-16 sm:w-24 lg:w-32"
                 animate={{ scaleX: [1, 1.2, 1] }}
                 transition={{ duration: 2, repeat: Infinity, delay: 1 }}
               />
-              <Leaf className="w-5 h-5 md:w-6 md:h-6 text-amber-400" />
+              <Leaf className="w-5 h-5 sm:w-6 sm:h-6 text-amber-400" />
             </div>
-            <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto">
+            <p className="text-body-lg text-white/70 max-w-3xl mx-auto">
               Nourish your being in our cosmic diner. Where every bite and sip elevates consciousness.
             </p>
           </motion.div>
 
           {/* Central Sacred Table */}
           <motion.div
-            className="relative mb-12 md:mb-16 flex justify-center"
+            className="flex justify-center mb-12"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 1.5 }}
           >
             <div className="relative">
-              <div className="w-32 h-32 md:w-48 md:h-48 rounded-full bg-gradient-to-br from-amber-500/10 to-purple-500/10 backdrop-blur-lg border border-amber-400/20 flex items-center justify-center">
+              <div className="w-32 h-32 lg:w-48 lg:h-48 rounded-full bg-gradient-to-br from-amber-500/10 to-purple-500/10 backdrop-blur-lg border border-amber-400/20 flex items-center justify-center">
                 <motion.div
-                  className="w-20 h-20 md:w-32 md:h-32"
+                  className="w-20 h-20 lg:w-32 lg:h-32"
                   animate={{ rotate: 360 }}
                   transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
                 >
@@ -149,7 +149,7 @@ const CafeRealm: React.FC = () => {
               {[Coffee, Leaf, Heart, Sparkles].map((Icon, index) => (
                 <motion.div
                   key={index}
-                  className="absolute w-8 h-8 md:w-12 md:h-12 rounded-full bg-white/5 backdrop-blur-lg border border-amber-400/20 flex items-center justify-center"
+                  className="absolute w-8 h-8 lg:w-12 lg:h-12 rounded-full bg-white/5 backdrop-blur-lg border border-amber-400/20 flex items-center justify-center"
                   style={{
                     top: `${50 + 40 * Math.cos((index * Math.PI) / 2)}%`,
                     left: `${50 + 40 * Math.sin((index * Math.PI) / 2)}%`,
@@ -165,14 +165,14 @@ const CafeRealm: React.FC = () => {
                     delay: index * 0.2,
                   }}
                 >
-                  <Icon className="w-4 h-4 md:w-6 md:h-6 text-amber-400" />
+                  <Icon className="w-4 h-4 lg:w-6 lg:h-6 text-amber-400" />
                 </motion.div>
               ))}
             </div>
           </motion.div>
 
           {/* Menu Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8 md:mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mb-12">
             {menu.map((item, index) => (
               <motion.div
                 key={item.name}
@@ -181,12 +181,16 @@ const CafeRealm: React.FC = () => {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 className="cursor-hover group"
               >
-                <div className="relative p-4 md:p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 group-hover:bg-white/10 group-hover:border-amber-400/30 transition-all duration-500 h-full">
+                <div className="card-base card-hover p-4 lg:p-6 h-full">
                   {/* Energy Indicator */}
                   <motion.div
-                    className="absolute -top-2 -right-2 px-2 md:px-3 py-1 rounded-full bg-amber-400/20 border border-amber-400/40 text-amber-400 text-xs font-cosmic"
+                    className="absolute -top-2 -right-2 px-2 lg:px-3 py-1 rounded-full bg-amber-400/20 border border-amber-400/40 text-amber-400 text-xs font-cosmic"
                     animate={{
-                      glow: [0, 10, 0],
+                      boxShadow: [
+                        '0 0 0px 0px #fbbf24',
+                        '0 0 12px 4px #fbbf24',
+                        '0 0 0px 0px #fbbf24'
+                      ],
                     }}
                     transition={{
                       duration: 2,
@@ -197,9 +201,9 @@ const CafeRealm: React.FC = () => {
                     {item.energy}
                   </motion.div>
 
-                  <div className="text-center">
+                  <div className="text-center spacing-content">
                     <motion.div
-                      className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-amber-500/20 to-orange-500/20 border border-amber-400/30 flex items-center justify-center"
+                      className="w-12 h-12 lg:w-16 lg:h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-amber-500/20 to-orange-500/20 border border-amber-400/30 flex items-center justify-center"
                       animate={{
                         scale: [1, 1.05, 1],
                       }}
@@ -209,15 +213,17 @@ const CafeRealm: React.FC = () => {
                         delay: index * 0.2,
                       }}
                     >
-                      <Coffee className="w-6 h-6 md:w-8 md:h-8 text-amber-400 group-hover:text-neon-gold transition-colors duration-500" />
+                      <Coffee className="w-6 h-6 lg:w-8 lg:h-8 text-amber-400 group-hover:text-neon-gold transition-colors duration-500" />
                     </motion.div>
 
-                    <h3 className="text-lg md:text-xl font-cosmic text-white mb-2">{item.name}</h3>
-                    <p className="text-white/60 text-xs md:text-sm mb-3">{item.description}</p>
-                    <div className="text-xl md:text-2xl font-bold text-neon-gold mb-4">{item.price}</div>
+                    <div className="spacing-items">
+                      <h3 className="text-heading-md text-white">{item.name}</h3>
+                      <p className="text-white/60 text-body-md">{item.description}</p>
+                      <div className="text-xl lg:text-2xl font-bold text-neon-gold">{item.price}</div>
+                    </div>
                     
                     <motion.button
-                      className="w-full py-2 rounded-lg bg-gradient-to-r from-amber-600/20 to-orange-600/20 border border-amber-400/30 text-amber-400 font-cosmic tracking-wide text-xs md:text-sm group-hover:from-amber-600/30 group-hover:to-orange-600/30 transition-all duration-500"
+                      className="button-primary w-full text-xs lg:text-sm"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
@@ -236,24 +242,26 @@ const CafeRealm: React.FC = () => {
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 1, delay: 1.5 }}
           >
-            <div className="max-w-md mx-auto p-4 md:p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10">
-              <h3 className="text-xl md:text-2xl font-cosmic text-white mb-3">Join the Frequency</h3>
-              <p className="text-white/60 text-xs md:text-sm mb-4">
-                Tune into our higher dimension. Receive cosmic updates and sacred offerings.
-              </p>
-              <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
-                <input
-                  type="email"
-                  placeholder="your@cosmic.email"
-                  className="flex-1 px-3 md:px-4 py-2 rounded-lg bg-white/5 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:border-amber-400/50 backdrop-blur-sm text-sm"
-                />
-                <motion.button
-                  className="px-4 md:px-6 py-2 rounded-lg bg-gradient-to-r from-amber-600/30 to-orange-600/30 border border-amber-400/40 text-amber-400 font-cosmic text-sm"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Ascend
-                </motion.button>
+            <div className="max-w-md mx-auto card-base p-6 lg:p-8">
+              <div className="spacing-content">
+                <h3 className="text-heading-md text-white">Join the Frequency</h3>
+                <p className="text-white/60 text-body-md">
+                  Tune into our higher dimension. Receive cosmic updates and sacred offerings.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <input
+                    type="email"
+                    placeholder="your@cosmic.email"
+                    className="flex-1 px-4 py-3 rounded-lg bg-white/5 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:border-amber-400/50 backdrop-blur-sm text-sm"
+                  />
+                  <motion.button
+                    className="button-secondary tap-target"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Ascend
+                  </motion.button>
+                </div>
               </div>
             </div>
           </motion.div>
